@@ -1,0 +1,48 @@
+﻿@using tcddExampleProject.Models.DTO;
+@model ICollection<GetAllUserDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h6>Kullanıcı Listesi</h6>
+    <hr />
+    @{
+        if (ViewBag.SuccessMessage != null)
+        {
+            <div class="alert alert-success" style="color:forestgreen;" role="alert">
+                @ViewBag.SuccessMessage &#9989;
+            </div>
+          
+
+        }
+    }
+    <div class="d-flex flex-row-reverse">
+        <a href="/User/AddUser"  class="btn btn-success d-flex flex-row-reverse btn-sm">Kullanıcı Ekle +</a>
+    </div>
+   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">TcNo</th>
+                <th scope="col">Ad Soyad</th>
+                <th scope="col">Doğum Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <th scope="row">@user.Id</th>
+                    <td>@user.TcNo</td>
+                    <td>@user.Ad @user.Soyad</td>
+                    <td>@user.DogumTarihi</td>
+                </tr>
+            }
+           
+          
+        </tbody>
+    </table>
+</div>
+

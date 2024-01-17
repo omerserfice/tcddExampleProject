@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h6>Kullanıcı Ekleme</h6>
+  
+   <div class="row">
+       <div class="col-lg-6">
+            <hr />
+           @{
+                if (ViewBag.DangerMessage != null)
+                {
+                    <div class="alert alert-danger" style="color:red;" role="alert">
+                        @ViewBag.DangerMessage &#10060;<br>
+                    </div>
+                }
+           }
+           
+            <form method="post" asp-action="AddUser" asp-controller="User">
+                <div class="form-group">
+                    <label>Tc Kimlik No</label>
+                    <input type="text" name="TcNo" maxlength="11" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label>Adı</label>
+                    <input type="text" name="Ad" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Soyadı</label>
+                    <input type="text" name="Soyad" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Doğum Tarihi</label>
+                    <input type="date" name="DogumTarihi" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success btn-sm mt-2">Ekle +</button>
+            </form>
+       </div>
+   </div>
+</div>
+

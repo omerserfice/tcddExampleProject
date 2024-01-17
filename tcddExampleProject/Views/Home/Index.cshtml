@@ -1,0 +1,29 @@
+﻿@*@model tcddExampleProject.Models.DTO.GetAllUserDto
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post" asp-controller="Home" asp-action="Index">
+    <div class="form-group">
+        <label>Tc Kimlik No</label>
+        @Html.TextBoxFor(m=>m.TcNo, new {@maxlength = "11",@class = "form-control",@type="number",id="TCKimlikNo" })
+    </div>
+    <div class="form-group">
+        <label>Adı</label>
+        @Html.TextBoxFor(m=>m.Ad, new {@class = "form-control",@type="text",id="Ad"})
+
+    </div>
+    <div class="form-group">
+        <label>Soyadı</label>
+        @Html.TextBoxFor(m=>m.Soyad, new {@class = "form-control",@type="text",id="Soyadı"})
+
+    </div>
+    <div class="form-group">
+        <label>Dogum Tarihi</label>
+        @Html.TextBoxFor(m=>m.DogumTarihi, new {@class = "form-control",@type="text",id="DogumYili"})
+
+    </div>
+   
+    <button type="submit" class="btn btn-primary" asp-controller="Home" asp-action="Index">Kontrol Et</button>
+</form>*@
